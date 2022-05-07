@@ -1,5 +1,6 @@
 terraform {
   required_version = ">= 1.0.11"
+  backend "s3" { /* See the backend config in config/backend-config.tf */ }
 
   required_providers {
     aws = {
@@ -21,13 +22,8 @@ variable "aws_region" {
   type = string
 }
 
-variable "aws_profile" {
-  type = string
-}
-
 provider "aws" {
   region = var.aws_region
-  profile = var.aws_profile
 }
 
 resource "aws_ecr_repository" "repository" {
