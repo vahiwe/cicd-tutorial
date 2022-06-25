@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, lesson/part-3 ]
+    branches: [ main ]
 
 permissions:
   id-token: write
